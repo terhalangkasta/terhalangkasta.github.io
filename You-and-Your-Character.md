@@ -1,12 +1,8 @@
 ---
 title: [GUIDE] You, Your Character
 parent: Home
-nav_order: 1
+nav_order: 3
 ---
-
-- TOC
-{:toc}
-
 # [GUIDE] You, Your Character
 
 **Penulis:** [machismo](https://jogjagamers.org/profile/52886-machismo/)  

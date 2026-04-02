@@ -1,10 +1,8 @@
 ---
 title: [GUIDE] Open-air and Closed-air Narcotics Market
 parent: Home
-nav_order: 3
+nav_order: 4
 ---
-- TOC
-{:toc}
 # [GUIDE] Open-air and Closed-air Narcotics Market
 
 **Penulis:** [machismo](https://jogjagamers.org/profile/52886-machismo/)  
