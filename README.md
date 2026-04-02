@@ -60,9 +60,11 @@ Keseluruhan struktur dasar karakter ini, secara in game sangat dapat diimplement
 
 **Contoh Implementasi:**
 
-$\textcolor{purple}{\textsf{-> Raymond Parisi is an Italian-American (ras), currently undergoing the mid-life crisis problem tipping his 40’s (Age, attitude), he looks younger than his actual age (penampilan).  }}$
-$\textcolor{purple}{\textsf{-> Raymond Parisi towering around 6’1’’ (Height), struggles to carry his 180lbs weight (Weight), seems to be respected among the other people around (status dan tingkat di lingkungan sosial). }}$
-$\textcolor{purple}{\textsf{-> Raymond Parisi is all about respect, and a very straight laced person (standar moral). Is a short-fuse when people around the cosa nostra breach the rules (tingkat emosi).}}$
+<span style="color: purple; font-family: sans-serif;">
+→ Raymond Parisi is an Italian-American (ras), currently undergoing the mid-life crisis problem tipping his 40’s (Age, attitude). He looks younger than his actual age (penampilan).<br>
+→ Raymond Parisi towers around 6’1’’ (Height), struggles to carry his 180lbs weight (Weight), and seems to be respected among the other people around him (status dan tingkat di lingkungan sosial).<br><
+→ Raymond Parisi is all about respect and is a very straight-laced person (standar moral). He has a short fuse when people around the Cosa Nostra breach the rules (tingkat emosi).
+</span>
 
 ### Character Abilities and Incompetencies
 
