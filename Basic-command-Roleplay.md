@@ -1,5 +1,6 @@
 ---
 title: [GUIDE] Basic Command Roleplay (/me dan /do)
+parent: Home
 nav_order: 2
 ---
 
