@@ -1,5 +1,5 @@
 ---
-title: [GUIDE] Open-air and Closed-air Narcotics Market
+title: Open-air and Closed-air Narcotics Market
 parent: Home
 nav_order: 4
 ---

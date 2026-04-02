@@ -1,5 +1,5 @@
 ---
-title: [GUIDE] Basic Command Roleplay (/me dan /do)
+title: Basic Command Roleplay (/me dan /do)
 parent: Home
 nav_order: 3
 ---

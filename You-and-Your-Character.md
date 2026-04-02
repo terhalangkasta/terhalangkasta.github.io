@@ -1,5 +1,5 @@
 ---
-title: [GUIDE] You, Your Character
+title: You, Your Character
 parent: Home
 nav_order: 2
 ---
