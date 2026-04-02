@@ -6,7 +6,7 @@
 
 ## Pendahuluan
 
-Guide ini akan banyak membahas mengenai elemen character development, dan immersion roleplay. Text-based roleplay game seperti game mode JogjaGamers Reality Project sangat erat kaitannya dengan permainan dan pendalaman karakter. Guide ini menargetkan player-player baru dalam segmen pembacanya. Keseluruhan guide ini merupakan basis atau dasar dari ber-roleplay, sebelum nantinya setiap pemain mulai memainkan peran ke dalam sebuah implementasi yang jauh lebih spesifik misalnya, berroleplay sebagai Italian American, Irish American, Russian, street gang, mobster, dan sebagainya dengan tambahan-tambahan culture dan detail detail yang baru.
+Guide ini akan banyak membahas mengenai elemen character development, dan immersion roleplay. Text-based roleplay game sangat erat kaitannya dengan permainan dan pendalaman karakter. Guide ini menargetkan player-player baru dalam segmen pembacanya. Keseluruhan guide ini merupakan basis atau dasar dari ber-roleplay, sebelum nantinya setiap pemain mulai memainkan peran ke dalam sebuah implementasi yang jauh lebih spesifik misalnya, berroleplay sebagai Italian American, Irish American, Russian, street gang, mobster, dan sebagainya dengan tambahan-tambahan culture dan detail detail yang baru.
 
 ## Immersive Roleplay
 

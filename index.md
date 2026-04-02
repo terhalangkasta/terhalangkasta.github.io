@@ -8,7 +8,8 @@ Pilih panduan di bawah ini:
 
 ## Daftar Guide
 
-* [You, and Your Character](you-and-your-character.md)
+* [You, and Your Character](You-and-Your-Character.md)
+* [Basic Command Roleplay (/me dan /do)](Basic-command-Roleplay.md)
 * [Open-air and Closed-air Narcotics Market](Open-air-and-Closed-air-Narcotics-Market.md)
 
 ---
