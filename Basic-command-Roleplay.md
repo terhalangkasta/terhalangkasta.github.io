@@ -3,9 +3,6 @@ title: [GUIDE] Basic Command Roleplay (/me dan /do)
 parent: Home
 nav_order: 2
 ---
-
-[← Back to Home](../index.html)
-
 # [GUIDE] Basic Command Roleplay (/me dan /do).
 
 **Penulis:** [ourae](https://jogjagamers.org/profile/10799-ourae/)  

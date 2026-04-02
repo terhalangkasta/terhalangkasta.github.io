@@ -4,7 +4,8 @@ parent: Home
 nav_order: 1
 ---
 
-[← Back to Home](../index.html)
+- TOC
+{:toc}
 
 # [GUIDE] You, Your Character
 
