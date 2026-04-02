@@ -1,5 +1,3 @@
-# Terhalang Kasta Roleplay Guide
-
 Selamat datang di dokumentasi guide roleplay.
 
 Pilih panduan di bawah ini:
