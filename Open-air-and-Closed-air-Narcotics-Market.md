@@ -1,3 +1,11 @@
+---
+title: You, and Your Character
+parent: Home
+nav_order: 3
+---
+
+[← Back to Home](../index.md)
+
 # [GUIDE] Open-air and Closed-air Narcotics Market
 
 **Penulis:** [machismo](https://jogjagamers.org/profile/52886-machismo/)  

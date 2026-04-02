@@ -1,3 +1,11 @@
+---
+title: You, and Your Character
+parent: Home
+nav_order: 1
+---
+
+[← Back to Home](../index.md)
+
 # [GUIDE] You, Your Character
 
 **Penulis:** [machismo](https://jogjagamers.org/profile/52886-machismo/)  
