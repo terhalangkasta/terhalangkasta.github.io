@@ -1,6 +1,5 @@
 ---
-title: Basic Command Roleplay (/me dan /do)
-parent: Home
+title: [GUIDE] Basic Command Roleplay (/me dan /do)
 nav_order: 2
 ---
 
@@ -16,7 +15,7 @@ nav_order: 2
 
 Selamat pagi, siang, sore dan malam. Pada kesempatan kali ini saya akan membahas terkait topic mengenai penggunaan basic command roleplay. Guide ini saya buat karena keresahan saya terhadap beberapa player yang ada di server belum mengetahui atau mengenal betul fungsi dan tujuan dari tiap-tiap basic command roleplay ini. Basic command roleplay yang saya bahasa kali ini yaitu /me  dan /do. Mungkin sudah ada beberapa patriot Jogjagamers yang sudah membuat guide tersebut. Guide ini merupakan pembaharuan dari guide-guide yang sama terkait hal ini.
 
-**ME** <span style="color:purple"> /me</span>
+**ME**  <span style="color:purple">/me</span>
 
 Perintah ini digunakan untuk mengekspresikan emosi karakter , perasaan, dan tindakan dari character anda secara spesifik atau jelas. Jika tindakan roleplay anda menyangkut dengan lawan RP anda, anda harus memberikan kesempatan juga kepada lawan RP anda untuk membalasan tindakan RP anda.
 
@@ -40,7 +39,7 @@ Contoh penggunaan tidak tepat dan tidak spesifik dari /me :
 
 Banyak sekali di temukan roleplay-roleplay semacam di atas, terlebih untuk kamu 'Money Machine'. Which is saya pribadi tidak ada masalah terkait 'Money Machine' nya, tetapi roleplay yang di tunjukkan sangat tidak tepat dan tidak spesifik sekali. Dan terkesan untuk buru-buru agar cepat selesai pekerjaan atau suatu tindakan tersebut. Bahkan, tidak jarang pemain yang sudah lama bermain di server pun masih melakukan hal yang sama.
 
-**DO** <span style="color:purple"> /do</span>
+**DO**  <span style="color:purple">/do</span>
 
 Perintah ini digunakan untuk menggambarkan sesuatu terhadap character anda, seperti penampilan, dan atau hanya mengungkapan sesuatu terhadap character anda. Atau menggambarkan suatu object sekitar anda. Perintah ini merupakan In Character (IC), bukan Out of Character (OOC). Namu penggunaan ini harus di jelaskan sejujur-jujurnya, alias kita tidak boleh berbohong di /do.
 
