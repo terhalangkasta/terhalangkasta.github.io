@@ -1,5 +1,5 @@
 ---
-title: You, and Your Character
+title: Basic Command Roleplay (/me dan /do)
 parent: Home
 nav_order: 2
 ---

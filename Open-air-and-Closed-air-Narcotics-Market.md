@@ -1,5 +1,5 @@
 ---
-title: You, and Your Character
+title: [GUIDE] Open-air and Closed-air Narcotics Market
 parent: Home
 nav_order: 3
 ---
