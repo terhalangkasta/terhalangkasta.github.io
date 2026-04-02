@@ -25,8 +25,8 @@ Contoh penggunaan tepat dan spesifik dari /me :
 * Frank Rattlesnake mengambil sejumlah uang dari saku celana kanannya dengan kedua tangan.<br>
 * Frank Rattlesnake menyenderkan bahu nya ke badan mobil, sambil dia menyilangkan kedua tangannya.<br>
 * Frank Rattlesnake memperlihatkan mimik kesal dari wajahnya, kemudian ia pergi meninggalkan John.<br>
-* Frank Rattlesnake mengambil satu batang rokok dari kotaknya, mengarahkan kemulut dan membakar rokoknya dengan pemantik.<br>
-</span><br>
+* Frank Rattlesnake mengambil satu batang rokok dari kotaknya, mengarahkan kemulut dan membakar rokoknya dengan pemantik.<br><br>
+</span>
 
 Contoh penggunaan tidak tepat dan tidak spesifik dari /me :
 
@@ -34,8 +34,8 @@ Contoh penggunaan tidak tepat dan tidak spesifik dari /me :
 * Frank Rattlesnake examine veh.<br>
 * Frank Rattlesnake hook a bait and start fishing.<br>
 * Frank Rattlesnake memulai pekerjaan.<br>
-* Frank Rattlesnake shocked after crash.<br>
-</span><br>
+* Frank Rattlesnake shocked after crash.<br><br>
+</span>
 
 Banyak sekali di temukan roleplay-roleplay semacam di atas, terlebih untuk kamu 'Money Machine'. Which is saya pribadi tidak ada masalah terkait 'Money Machine' nya, tetapi roleplay yang di tunjukkan sangat tidak tepat dan tidak spesifik sekali. Dan terkesan untuk buru-buru agar cepat selesai pekerjaan atau suatu tindakan tersebut. Bahkan, tidak jarang pemain yang sudah lama bermain di server pun masih melakukan hal yang sama.
 
