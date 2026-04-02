@@ -22,7 +22,7 @@ Perintah ini digunakan untuk mengekspresikan emosi karakter , perasaan, dan tind
 
 Contoh penggunaan tepat dan spesifik dari /me :
 
-<span style="color:purple">
+<span style="color:purple"><br>
 * Frank Rattlesnake mengambil sejumlah uang dari saku celana kanannya dengan kedua tangan.<br>
 * Frank Rattlesnake menyenderkan bahu nya ke badan mobil, sambil dia menyilangkan kedua tangannya.<br>
 * Frank Rattlesnake memperlihatkan mimik kesal dari wajahnya, kemudian ia pergi meninggalkan John.<br>
@@ -31,7 +31,7 @@ Contoh penggunaan tepat dan spesifik dari /me :
 
 Contoh penggunaan tidak tepat dan tidak spesifik dari /me :
 
-<span style="color:purple">
+<span style="color:purple"><br>
 * Frank Rattlesnake examine veh.<br>
 * Frank Rattlesnake hook a bait and start fishing.<br>
 * Frank Rattlesnake memulai pekerjaan.<br>
@@ -46,7 +46,7 @@ Perintah ini digunakan untuk menggambarkan sesuatu terhadap character anda, sepe
 
 Contoh penggunaan tepat dari /do :
 
-<span style="color:purple">
+<span style="color:purple"><br>
 -   Terdapat memar di bagian pipi nya. ((Frank Rattlesnake))<br>
 -   Terlihat kaca mobil Premier retak. ((Frank Rattlesnake))<br>
 -   Baju Frank terdapat bercak kotor di bagian pundaknya. ((Frank Rattlesnake))<br>
@@ -55,7 +55,7 @@ Contoh penggunaan tepat dari /do :
 
 Contoh penggunaan /do untuk memberikan kesempatan lawan roleplay :
 
-<span style="color:purple">
+<span style="color:purple"><br>
 -   Apakah ada perlawanan saat kedua tangan John di borgol? ((Frank Rattlesnake))<br>
 -   Dimana dapat di temukan ID card di tubuh John? ((Frank Rattlesnake))<br>
 -   Apakah John memakai topi? ((Frank Rattlesnake))<br><br>
@@ -63,7 +63,7 @@ Contoh penggunaan /do untuk memberikan kesempatan lawan roleplay :
 
 Contoh penggunaan tidak tepat dari /do :
 
-<span style="color:purple">
+<span style="color:purple"><br>
 -   Tenang. ((Frank Rattlesnake))<br>
 -   Terambil. ((Frank Rattlesnake))<br>
 -   SS'ed, report forum. ((Frank Rattlesnake)).<br>
