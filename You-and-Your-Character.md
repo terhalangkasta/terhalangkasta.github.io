@@ -4,7 +4,7 @@ parent: Home
 nav_order: 1
 ---
 
-[← Back to Home](../index.md)
+[← Back to Home](../index.html)
 
 # [GUIDE] You, Your Character
 

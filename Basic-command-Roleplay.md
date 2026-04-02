@@ -4,7 +4,7 @@ parent: Home
 nav_order: 2
 ---
 
-[← Back to Home](../index.md)
+[← Back to Home](../index.html)
 
 # [GUIDE] Basic Command Roleplay (/me dan /do).
 
@@ -22,20 +22,22 @@ Perintah ini digunakan untuk mengekspresikan emosi karakter , perasaan, dan tind
 
 Contoh penggunaan tepat dan spesifik dari /me :
 
-<span style="color:purple"><br>
-* Frank Rattlesnake mengambil sejumlah uang dari saku celana kanannya dengan kedua tangan.<br>
-* Frank Rattlesnake menyenderkan bahu nya ke badan mobil, sambil dia menyilangkan kedua tangannya.<br>
-* Frank Rattlesnake memperlihatkan mimik kesal dari wajahnya, kemudian ia pergi meninggalkan John.<br>
-* Frank Rattlesnake mengambil satu batang rokok dari kotaknya, mengarahkan kemulut dan membakar rokoknya dengan pemantik.<br><br>
-</span>
+<div style="color:purple">
+
+* Frank Rattlesnake mengambil sejumlah uang dari saku celana kanannya dengan kedua tangan.  
+* Frank Rattlesnake menyenderkan bahunya ke badan mobil, sambil ia menyilangkan kedua tangannya.  
+* Frank Rattlesnake memperlihatkan mimik kesal dari wajahnya, kemudian ia pergi meninggalkan John.  
+* Frank Rattlesnake mengambil satu batang rokok dari kotaknya, mengarahkan ke mulut dan membakar rokoknya dengan pemantik.  
+
+</div>
 
 Contoh penggunaan tidak tepat dan tidak spesifik dari /me :
 
-<span style="color:purple"><br>
-* Frank Rattlesnake examine veh.<br>
-* Frank Rattlesnake hook a bait and start fishing.<br>
-* Frank Rattlesnake memulai pekerjaan.<br>
-* Frank Rattlesnake shocked after crash.<br><br>
+<span style="color:purple">
+* Frank Rattlesnake examine veh.
+* Frank Rattlesnake hook a bait and start fishing.
+* Frank Rattlesnake memulai pekerjaan.
+* Frank Rattlesnake shocked after crash.
 </span>
 
 Banyak sekali di temukan roleplay-roleplay semacam di atas, terlebih untuk kamu 'Money Machine'. Which is saya pribadi tidak ada masalah terkait 'Money Machine' nya, tetapi roleplay yang di tunjukkan sangat tidak tepat dan tidak spesifik sekali. Dan terkesan untuk buru-buru agar cepat selesai pekerjaan atau suatu tindakan tersebut. Bahkan, tidak jarang pemain yang sudah lama bermain di server pun masih melakukan hal yang sama.
@@ -46,28 +48,28 @@ Perintah ini digunakan untuk menggambarkan sesuatu terhadap character anda, sepe
 
 Contoh penggunaan tepat dari /do :
 
-<span style="color:purple"><br>
--   Terdapat memar di bagian pipi nya. ((Frank Rattlesnake))<br>
--   Terlihat kaca mobil Premier retak. ((Frank Rattlesnake))<br>
--   Baju Frank terdapat bercak kotor di bagian pundaknya. ((Frank Rattlesnake))<br>
--   Terdapat beberapa cangkir gelas di atas meja. ((Frank Rattlesnake))<br><br>
+<span style="color:purple">
+-   Terdapat memar di bagian pipi nya. ((Frank Rattlesnake))
+-   Terlihat kaca mobil Premier retak. ((Frank Rattlesnake))
+-   Baju Frank terdapat bercak kotor di bagian pundaknya. ((Frank Rattlesnake))
+-   Terdapat beberapa cangkir gelas di atas meja. ((Frank Rattlesnake))
 </span>
 
 Contoh penggunaan /do untuk memberikan kesempatan lawan roleplay :
 
-<span style="color:purple"><br>
--   Apakah ada perlawanan saat kedua tangan John di borgol? ((Frank Rattlesnake))<br>
--   Dimana dapat di temukan ID card di tubuh John? ((Frank Rattlesnake))<br>
--   Apakah John memakai topi? ((Frank Rattlesnake))<br><br>
+<span style="color:purple">
+-   Apakah ada perlawanan saat kedua tangan John di borgol? ((Frank Rattlesnake))
+-   Dimana dapat di temukan ID card di tubuh John? ((Frank Rattlesnake))
+-   Apakah John memakai topi? ((Frank Rattlesnake))
 </span>
 
 Contoh penggunaan tidak tepat dari /do :
 
-<span style="color:purple"><br>
--   Tenang. ((Frank Rattlesnake))<br>
--   Terambil. ((Frank Rattlesnake))<br>
--   SS'ed, report forum. ((Frank Rattlesnake)).<br>
--   /accept frisk mas. ((Frank Rattlesnake)).<br><br>
+<span style="color:purple">
+-   Tenang. ((Frank Rattlesnake))
+-   Terambil. ((Frank Rattlesnake))
+-   SS'ed, report forum. ((Frank Rattlesnake)).
+-   /accept frisk mas. ((Frank Rattlesnake)).
 </span>
 
 **Penutupan**
