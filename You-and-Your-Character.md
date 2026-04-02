@@ -1,7 +1,7 @@
 ---
 title: [GUIDE] You, Your Character
 parent: Home
-nav_order: 3
+nav_order: 2
 ---
 # [GUIDE] You, Your Character
 
