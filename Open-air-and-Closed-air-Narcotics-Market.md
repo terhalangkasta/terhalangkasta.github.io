@@ -1,6 +1,6 @@
 # [GUIDE] Open-air and Closed-air Narcotics Market
 
-**Penulis:** machismo  
+**Penulis:** [machismo](https://jogjagamers.org/profile/52886-machismo/)  
 **Tanggal Posting:** 05 Market 2022  
 **Sumber:** [Jogjagamers Forum](https://jogjagamers.org/topic/209949-guide-open-air-and-closed-air-narcotics-market/)
 

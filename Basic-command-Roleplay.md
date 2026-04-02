@@ -1,10 +1,8 @@
 # [GUIDE] Basic Command Roleplay (/me dan /do).
 
-**Penulis:** ourae  
-**Tanggal Posting:** 26 Oktober 2021
+**Penulis:** [ourae](https://jogjagamers.org/profile/10799-ourae/)  
+**Tanggal Posting:** 26 Oktober 2021  
 **Sumber:** [Jogjagamers Forum](https://jogjagamers.org/topic/190261-guide-basic-command-roleplay-me-dan-do/)
-
-**BASIC COMMAND ROLEPLAY**
 
 **Introduction**
 

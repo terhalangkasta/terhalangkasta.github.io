@@ -1,6 +1,6 @@
 # [GUIDE] You, Your Character
 
-**Penulis:** machismo  
+**Penulis:** [machismo](https://jogjagamers.org/profile/52886-machismo/)  
 **Tanggal Posting:** 23 Agustus 2022  
 **Sumber:** [Jogjagamers Forum](https://jogjagamers.org/topic/232809-guide-you-your-character/)
 
