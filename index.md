@@ -9,6 +9,7 @@ Pilih panduan di bawah ini:
 ## Daftar Guide
 
 * [You, and Your Character](you-and-your-character.md)
+* [Open-air and Closed-air Narcotics Market](Open-air-andClosed-air-Narcotics-Market.md)
 
 ---
 

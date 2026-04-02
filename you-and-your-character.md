@@ -2,7 +2,7 @@
 
 **Penulis:** machismo  
 **Tanggal Posting:** 23 Agustus 2022  
-**Sumber:** JogjaGamers Forum
+**Sumber:** [Jogjagamers Forum](https://jogjagamers.org/topic/232809-guide-you-your-character/)
 
 ## Pendahuluan
 
@@ -62,7 +62,7 @@ Keseluruhan struktur dasar karakter ini, secara in game sangat dapat diimplement
 
 <span style="color: purple; font-family: sans-serif;">
 → Raymond Parisi is an Italian-American (ras), currently undergoing the mid-life crisis problem tipping his 40’s (Age, attitude). He looks younger than his actual age (penampilan).<br>
-→ Raymond Parisi towers around 6’1’’ (Height), struggles to carry his 180lbs weight (Weight), and seems to be respected among the other people around him (status dan tingkat di lingkungan sosial).<br><
+→ Raymond Parisi towers around 6’1’’ (Height), struggles to carry his 180lbs weight (Weight), and seems to be respected among the other people around him (status dan tingkat di lingkungan sosial).<br>
 → Raymond Parisi is all about respect and is a very straight-laced person (standar moral). He has a short fuse when people around the Cosa Nostra breach the rules (tingkat emosi).
 </span>
 
