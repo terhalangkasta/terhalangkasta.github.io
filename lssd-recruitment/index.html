@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Police Officer Recruitment</title>
+
+<link rel="icon" type="image/png" href="favicon.png?v=2">
+
+<meta property="og:title" content="Police Officer Recruitment">
+<meta property="og:description" content="Generate Law Enforcement Officer Recruitment BBCode.">
+<meta property="og:image" content="https://imagizer.imageshack.com/v2/200x200q70/924/Rs1Hi8.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#2E3E2B">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  background: #2E3E2B;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #fff;
+}
+
+.header img { width: 70px; }
+.header h1 { margin: 0; font-size: 26px; }
+.header p { margin: 4px 0 0; color: #ddd; }
+
+.notice,
+.card {
+  background: #fff;
+  color: #111;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,.25);
+  margin-bottom: 15px;
+}
+
+.notice ul { margin-bottom: 0; }
+
+h2 {
+  background: #000;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 18px;
+  margin: 25px 0 15px;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.full { grid-column: 1 / -1; }
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  font: inherit;
+}
+
+textarea { resize: vertical; }
+
+button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 8px 12px 0;
+  font-weight: bold;
+}
+
+button:hover { background: #333; }
+
+.output-area { margin-top: 30px; }
+
+.word-counter {
+  display: inline-block;
+  margin: -2px 0 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #f1f1f1;
+  color: #c0392b;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.word-counter.ok {
+  color: #1e8449;
+}
+
+@media (max-width: 760px) {
+  body { padding: 12px; }
+  .section-grid { grid-template-columns: 1fr; }
+  .header { align-items: flex-start; }
+}
+</style>
+</head>
+
+<body>
+<div class="header">
+  <img src="sheriff.png" alt="Recruitment Logo">
+  <div>
+    <h1>Law Enforcement Officer Recruitment</h1>
+    <p>BBCode generator for Police Officer Recruitment applications.</p>
+  </div>
+</div>
+
+<div class="notice">
+  <h3>Instructions for the Applicant</h3>
+  <ul>
+    <li>Answer the question with proper English or Bahasa.</li>
+    <li>Fill every answer properly before submit.</li>
+    <li><b>((</b> Any attempt to use false, misleading, or stolen identity information is a serious violation and may result in suspension or ban. <b>))</b></li>
+    <li>Your title will be generated as <b>[Police Officer Recruitment] Firstname Lastname</b>.</li>
+  </ul>
+</div>
+
+<h2>PERSONAL INFORMATION</h2>
+<div class="section-grid">
+  <div class="card">
+    <label for="firstName">First Name</label>
+    <input id="firstName" placeholder="Answer Here">
+  </div>
+  <div class="card">
+    <label for="lastName">Last Name</label>
+    <input id="lastName" placeholder="Answer Here">
+  </div>
+  <div class="card">
+    <label for="dob">Date of Birth (DD/MM/YYYY)</label>
+    <input id="dob" placeholder="DD/MM/YYYY">
+  </div>
+  <div class="card">
+    <label for="birthPlace">Place of Birth</label>
+    <input id="birthPlace" placeholder="Answer Here">
+  </div>
+  <div class="card">
+    <label for="gender">Gender</label>
+    <select id="gender">
+      <option value="">Male/Female</option>
+      <option>Male</option>
+      <option>Female</option>
+    </select>
+  </div>
+  <div class="card">
+    <label for="phone">Phone Number</label>
+    <input id="phone" placeholder="Answer Here">
+  </div>
+</div>
+
+<h2>LEGAL INFORMATION</h2>
+<div class="section-grid">
+  <div class="card">
+    <label for="drivingLicense">Do you have a driving license?</label>
+    <select id="drivingLicense"><option>NO</option><option>YES</option></select>
+  </div>
+  <div class="card">
+    <label for="ticketLeo">Have you ever received a ticket from LEO? If yes please explain</label>
+    <textarea id="ticketLeo" rows="3" placeholder="NO/YES"></textarea>
+  </div>
+  <div class="card">
+    <label for="detainedLeo">Have you ever been detained by LEO? If yes please explain</label>
+    <textarea id="detainedLeo" rows="3" placeholder="NO/YES"></textarea>
+  </div>
+  <div class="card">
+    <label for="arrestedLeo">Have you ever been arrested by LEO? If yes please explain</label>
+    <textarea id="arrestedLeo" rows="3" placeholder="NO/YES"></textarea>
+  </div>
+  <div class="card full">
+    <label for="ridealongs">Have you joined any ridealongs program? If yes who are the officers you ridealong with?</label>
+    <textarea id="ridealongs" rows="3" placeholder="NO/YES"></textarea>
+  </div>
+</div>
+
+<h2>PERSONAL QUESTION</h2>
+<div class="section-grid">
+  <div class="card full">
+    <label for="whyApply">Why do you want to apply as a Police Officer? (At least 100 word)</label>
+    <textarea id="whyApply" rows="7" placeholder="Answer Here"></textarea>
+    <span class="word-counter" data-counter-for="whyApply" data-min-words="100">0 / 100 words</span>
+  </div>
+  <div class="card full">
+    <label for="whyAccept">Why should we accept you as a Police Officer? (At least 100 word)</label>
+    <textarea id="whyAccept" rows="7" placeholder="Answer Here"></textarea>
+    <span class="word-counter" data-counter-for="whyAccept" data-min-words="100">0 / 100 words</span>
+  </div>
+  <div class="card full">
+    <label for="leoCivilianDifference">What is the difference between LEO and civilian society group?</label>
+    <textarea id="leoCivilianDifference" rows="5" placeholder="Answer Here"></textarea>
+    <span class="word-counter" data-counter-for="leoCivilianDifference">0 words</span>
+  </div>
+</div>
+
+<h2>(( OUT OF CHARACTER INFORMATION ))</h2>
+<div class="section-grid">
+  <div class="card">
+    <label for="realName">Real Life Name</label>
+    <input id="realName" placeholder="Answer Here">
+  </div>
+  <div class="card">
+    <label for="realAge">Real Life Age</label>
+    <input id="realAge" type="number" placeholder="Answer Here">
+  </div>
+  <div class="card">
+    <label for="location">Location</label>
+    <input id="location" placeholder="Answer Here">
+  </div>
+  <div class="card">
+    <label for="discord">Discord ID</label>
+    <input id="discord" placeholder="Answer Here">
+  </div>
+  <div class="card full">
+    <label for="policeExperience">Have you ever played as a Police Officer? If yes please tell us about it</label>
+    <textarea id="policeExperience" rows="5" placeholder="Answer Here"></textarea>
+  </div>
+</div>
+
+<div class="output-area">
+  <div class="notice">
+    <b>Instructions:</b> Fill out the form, click <b>Generate BBCode</b>, then copy both the Topic Title and Topic Body into the forum.
+  </div>
+
+  <button onclick="generateBBCode()">Generate BBCode</button>
+
+  <h2>Topic Title</h2>
+  <textarea id="titleOutput" rows="2" readonly></textarea>
+  <button onclick="copyText('titleOutput')">Copy Title</button>
+
+  <h2>Topic Body</h2>
+  <textarea id="output" rows="24" readonly></textarea>
+  <button onclick="copyText('output')">Copy Body</button>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+
+document.querySelectorAll('input, textarea, select').forEach(el => {
+  if (!el.id || el.id === 'titleOutput' || el.id === 'output') return;
+
+  const saved = localStorage.getItem(el.id);
+  if (saved !== null) el.value = saved;
+
+  el.addEventListener('input', () => localStorage.setItem(el.id, el.value));
+  el.addEventListener('change', () => localStorage.setItem(el.id, el.value));
+});
+
+function val(id, fallback = 'Answer Here') {
+  const el = $(id);
+  return el && el.value.trim() ? el.value.trim() : fallback;
+}
+
+function countWords(text) {
+  const words = text.trim().match(/\S+/g);
+  return words ? words.length : 0;
+}
+
+function updateWordCounter(counter) {
+  const target = $(counter.dataset.counterFor);
+  if (!target) return;
+
+  const count = countWords(target.value);
+  const minimum = Number(counter.dataset.minWords || 0);
+
+  counter.textContent = minimum ? `${count} / ${minimum} words` : `${count} words`;
+  counter.classList.toggle('ok', minimum ? count >= minimum : count > 0);
+}
+
+function initWordCounters() {
+  document.querySelectorAll('.word-counter').forEach(counter => {
+    const target = $(counter.dataset.counterFor);
+    if (!target) return;
+
+    target.addEventListener('input', () => updateWordCounter(counter));
+    updateWordCounter(counter);
+  });
+}
+
+initWordCounters();
+
+function generateBBCode() {
+  const firstName = val('firstName', 'Firstname');
+  const lastName = val('lastName', 'Lastname');
+
+  $('titleOutput').value = `[Police Officer Recruitment] ${firstName} ${lastName}`;
+
+  const bbcode = `[divbox=white][center][img]https://imagizer.imageshack.com/v2/200x200q70/924/Rs1Hi8.png[/img][img]https://imagizer.imageshack.com/img924/9329/WjRSSl.png[/img][img]https://imageshack.com/i/pogQ42LOp[/img]
+
+[size=150]LAW ENFORCEMENT OFFICER RECRUITMENT[/size][/center]
+
+
+[size=120]INSTRUCTIONS FOR THE APPLICANT[/size]
+[list][*]Answer the question with proper english or bahasa
+[*]Remove the '<ANSWER HERE>' and replace with ur answer
+[*]Make sure that all answer properly before submit.
+[*][b](([/b] Any attempt to use false, misleading, or stolen identity information is a serious violation of our rules and may result in immediate suspension or permanent ban from this platform. Always provide accurate and truthful information. [b]))[/b]
+[*][b](([/b] Your title should be [b][Police Officer Recruitment]Firstname Lastname[/b] of your character [b]))[/b][/list]
+[center][b]MAKE SURE THAT YOU READ THE RECRUITMENTS BEFORE APPLY[/b][/center][/divbox]
+[divbox=black][size=120][color=white]PERSONAL INFORMATION[/color][/size][/divbox]
+[divbox=white][list=1][*]RECRUITEE NAME [b]:[/b]
+[list=none][*]First Name[b]:[/b] ${val('firstName')}
+[*]Last name[b]:[/b] ${val('lastName')}
+[/list]
+[*]Date of Birth (DD/MM/YYYY) [b]:[/b]
+[list=none][*]${val('dob')}[/list]
+[*]Place of Birth [b]:[/b]
+[list=none][*]${val('birthPlace')}[/list]
+[*]Gender [b]:[/b]
+[list=none][*]${val('gender', 'Male/Female')}[/list]
+[*]Phone Number [b]:[/b]
+[list=none][*]${val('phone')}
+[/list][/list][/divbox]
+[divbox=black][size=120][color=white]LEGAL INFORMATION[/color][/size][/divbox]
+[divbox=white][list=1][*]DO YOU HAVE A DRIVING LICENSE ? [b]:[/b]
+[list=none][*]${val('drivingLicense', 'NO/YES')}[/list]
+[*]HAVE YOU EVER RECEIVED A TICKET FROM LEO ? IF YES PLEASE EXPLAIN [b]:[/b]
+[list=none][*]${val('ticketLeo', 'NO/YES')}[/list]
+[*]HAVE YOU EVER BEEN DETAINED BY LEO ? IF YES PLEASE EXPLAIN [b]:[/b]
+[list=none][*]${val('detainedLeo', 'NO/YES')}[/list]
+[*]HAVE YOU EVER BEEN ARRESTED BY LEO ? IF YES PLEASE EXPLAIN [b]:[/b]
+[list=none][*]${val('arrestedLeo', 'NO/YES')}[/list]
+[*]HAVE YOU JOINED ANY RIDEALONGS PROGRAM? IF YES WHO ARE THE OFFICERS YOU RIDEALONG WITH?[b]:[/b]
+[list=none][*]${val('ridealongs', 'NO/YES')}
+[/list][/list][/divbox]
+[divbox=black][size=120][color=white]PERSONAL QUESTION[/color][/size][/divbox]
+[divbox=white][list=1][*]WHY DO YOU WANT TO APPLY AS A POLICE OFFICER ? [b](At least 100 word)[/b] [b]:[/b]
+[list=none][*]${val('whyApply')}[/list]
+[*]WHY SHOULD WE ACCEPT YOU AS A POLICE OFFICER ? [b](At least 100 word)[/b] [b]:[/b]
+[list=none][*]${val('whyAccept')}[/list]
+[*]WHAT IS THE DIFFERENCE BETWEEN LEO AND CIVILIAN SOCIETY GROUP ? [b]:[/b]
+[list=none][*]${val('leoCivilianDifference')}
+[/list][/list][/divbox]
+[divbox=black][size=120][color=white](( OUT OF CHARACTER INFORMATION ))[/color][/size][/divbox]
+[divbox=white][list=1][*]Real Life Name [b]:[/b]
+[list=none][*]${val('realName')}[/list]
+[*]Real Life Age [b]:[/b]
+[list=none][*]${val('realAge')}[/list]
+[*]Location [b]:[/b]
+[list=none][*]${val('location')}[/list]
+[*]Discord ID [b]:[/b]
+[list=none][*]${val('discord')}[/list]
+[*]Have You Ever Played As A Police Officer ? If Yes Please Tell Us About It [b]:[/b]
+[list=none][*]${val('policeExperience')}
+[/list][/list][/divbox]`;
+
+  $('output').value = bbcode.trim();
+}
+
+function copyText(id) {
+  const el = $(id);
+  el.select();
+  document.execCommand('copy');
+}
+</script>
+</body>
+</html>
