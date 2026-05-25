@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whatsapp Call + Live Translate (Debug Mode)</title>
+    <title>Debug Audio - Call + Translate</title>
     <style>
         body {
             margin: 0;
@@ -17,8 +17,8 @@
         }
         .call-container {
             background: linear-gradient(145deg, #128C7E, #075e54);
-            width: 350px;
-            height: 650px; /* Sedikit ditinggikan untuk panel debug */
+            width: 360px;
+            height: 700px;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             display: flex;
@@ -26,35 +26,82 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding: 10px;
+            box-sizing: border-box;
         }
-        .profile-header { margin-top: 40px; text-align: center; }
+        .profile-header { margin-top: 20px; text-align: center; }
         .avatar {
-            width: 80px; height: 80px;
+            width: 70px; height: 70px;
             background-color: #dcf8c6; border-radius: 50%;
             display: flex; justify-content: center; align-items: center;
-            font-size: 30px; color: #075e54; margin: 0 auto 15px;
+            font-size: 30px; color: #075e54; margin: 0 auto 10px;
         }
-        .username { font-size: 24px; font-weight: bold; }
-        .call-status { font-size: 14px; color: #dcf8c6; margin-top: 5px; height: 20px; }
+        .username { font-size: 22px; font-weight: bold; }
+        .call-status { font-size: 13px; color: #dcf8c6; margin-top: 5px; height: 20px; }
         
-        /* Panel Debug untuk melihat error sistem */
+        /* Panel Debug & Kontrol */
         .debug-panel {
-            margin-top: 15px;
-            width: 85%;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 8px;
-            border-radius: 5px;
-            font-size: 10px;
-            color: #ffcdd2;
-            max-height: 40px;
+            margin-top: 10px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            color: #ffeb3b;
+            max-height: 50px;
             overflow-y: auto;
             text-align: left;
             box-sizing: border-box;
         }
+        .audio-debug-controls {
+            margin-top: 10px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            box-sizing: border-box;
+        }
+        .toggle-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+        }
+        .switch {
+            position: relative;
+            width: 40px;
+            height: 20px;
+        }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px; width: 16px;
+            left: 2px; bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider { background-color: #f44336; }
+        input:checked + .slider:before { transform: translateX(20px); }
+
+        .lang-selector { margin-top: 10px; display: flex; gap: 8px; align-items: center; font-size: 12px; width: 100%; justify-content: center; }
+        select { padding: 4px; border-radius: 5px; border: none; background: #dcf8c6; color: #075e54; font-weight: bold; }
 
         .subtitle-box {
             position: absolute;
-            bottom: 140px;
+            bottom: 120px;
             width: 90%;
             background: rgba(0, 0, 0, 0.6);
             padding: 15px;
@@ -66,7 +113,7 @@
         .original-text { font-size: 12px; color: #aaa; margin-bottom: 5px; font-style: italic; word-wrap: break-word; }
         .translated-text { font-size: 16px; color: white; font-weight: 500; word-wrap: break-word; }
         
-        .controls { position: absolute; bottom: 40px; display: flex; gap: 20px; }
+        .controls { position: absolute; bottom: 30px; display: flex; gap: 20px; }
         .btn {
             width: 60px; height: 60px; border-radius: 50%; border: none;
             font-size: 24px; cursor: pointer; display: flex;
@@ -81,8 +128,6 @@
             70% { box-shadow: 0 0 0 20px rgba(76, 175, 80, 0); }
             100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
         }
-        .lang-selector { margin-top: 15px; display: flex; gap: 10px; align-items: center; font-size: 12px; }
-        select { padding: 5px; border-radius: 5px; border: none; background: #dcf8c6; color: #075e54; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -94,8 +139,29 @@
         <div class="call-status" id="status">Siap menelepon...</div>
     </div>
 
-    <!-- Panel debug untuk melihat log sistem -->
+    <!-- Panel Log Teks -->
     <div class="debug-panel" id="debugLog">Menunggu aksi...</div>
+
+    <!-- Panel Debug Audio -->
+    <div class="audio-debug-controls">
+        <div class="toggle-row">
+            <span>🔊 Echo Mic (Dengar Sendiri)</span>
+            <label class="switch">
+                <input type="checkbox" id="echoToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div style="font-size:9px; color:#ff9800; text-align:center;">
+            ⚠️ WAJIB PAKAI HEADSEAT! Kalau tidak, suara akan pekik!
+        </div>
+        <div class="toggle-row">
+            <span>🗣️ TTS Terjemahan (Dengar Hasil)</span>
+            <label class="switch">
+                <input type="checkbox" id="ttsToggle" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
 
     <div class="lang-selector">
         Bahasa Saya: 
@@ -132,7 +198,7 @@
     const recognition = new SpeechRecognition();
     recognition.continuous = true; 
     recognition.interimResults = true;
-    recognition.maxAlternatives = 1; // Hanya ambil 1 hasil terbaik
+    recognition.maxAlternatives = 1;
 
     let isListening = false;
 
@@ -142,15 +208,71 @@
     const btnMic = document.getElementById('btnMic');
     const langSource = document.getElementById('langSource');
     const langTarget = document.getElementById('langTarget');
+    const echoToggle = document.getElementById('echoToggle');
+    const ttsToggle = document.getElementById('ttsToggle');
 
-    // Fungsi untuk mencatat log di layar
+    // ==========================================
+    // FITUR 1: DEBUG ECHO MIC (Mendengar Sendiri)
+    // ==========================================
+    let echoStream = null;
+    let audioContext = null;
+    let sourceNode = null;
+
+    echoToggle.addEventListener('change', async (e) => {
+        if (e.target.checked) {
+            try {
+                // Meminta akses mikrofon langsung via Web Audio API
+                echoStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                audioContext = new AudioContext();
+                sourceNode = audioContext.createMediaStreamSource(echoStream);
+                
+                // Hubungkan mikrofon langsung ke speaker
+                sourceNode.connect(audioContext.destination); 
+                logDebug("🔊 DEBUG: Echo Mic NYALA. Sekarang bicara, dengar speaker.");
+            } catch (err) {
+                logDebug("❌ DEBUG: Mikrofon diblokir oleh browser!");
+                e.target.checked = false; // Kembalikan toggle ke mati
+            }
+        } else {
+            // Putuskan koneksi dan matikan mikrofon
+            if (sourceNode) sourceNode.disconnect();
+            if (audioContext) audioContext.close();
+            if (echoStream) echoStream.getTracks().forEach(track => track.stop());
+            logDebug("🔇 DEBUG: Echo Mic MATI.");
+        }
+    });
+
+    // ==========================================
+    // FITUR 2: TEXT-TO-SPEECH (Mengucapkan Terjemahan)
+    // ==========================================
+    function speakTranslation(text) {
+        if (!ttsToggle.checked) return; // Jika toggle TTS mati, jangan bicara
+        if (!text || text.includes("[Gagal")) return;
+
+        window.speechSynthesis.cancel(); // Hentikan TTS sebelumnya jika ada
+
+        const targetLangVal = langTarget.value;
+        // Sesuaikan kode bahasa untuk TTS (id -> id-ID, en -> en-US)
+        const ttsLang = targetLangVal === 'en' ? 'en-US' : 'id-ID';
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = ttsLang;
+        utterance.rate = 1.0;
+        utterance.pitch = 1.0;
+        
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // ==========================================
+    // LOGIC UTAMA SPEECH TO TEXT
+    // ==========================================
     function logDebug(msg) {
         console.log(msg);
         debugEl.innerText = msg;
     }
 
     recognition.onstart = () => {
-        logDebug("Sistem: API Speech dimulai.");
+        logDebug("📡 Sistem: API Speech mendengarkan...");
     };
 
     recognition.onresult = async (event) => {
@@ -161,10 +283,10 @@
             const transcript = event.results[i][0].transcript;
             if (event.results[i].isFinal) {
                 finalTranscript += transcript;
-                logDebug("Sistem: Kata final ditangkap.");
+                logDebug("✅ Sistem: Kalimat final tertangkap!");
             } else {
                 interimTranscript += transcript;
-                logDebug("Sistem: Mendeteksi suara...");
+                logDebug("🎙️ Sistem: Deteksi suara...");
             }
         }
 
@@ -176,29 +298,28 @@
             const translated = await translateText(finalTranscript);
             translatedTextEl.innerText = translated;
             statusEl.innerText = "Mendengarkan...";
+            
+            // Panggil fungsi TTS untuk mengucapkan hasilnya
+            speakTranslation(translated);
         }
     };
 
     recognition.onerror = (event) => {
-        logDebug("Sistem Error: " + event.error);
+        logDebug("⚠️ Sistem Error: " + event.error);
         if (event.error === 'not-allowed') {
-            statusEl.innerText = "Mikrofon diblokir!";
+            statusEl.innerText = "Mikrofon diblokir browser!";
         }
     };
 
-    // PATCH: Beri jeda (delay) saat restart agar tidak hanging
     recognition.onend = () => {
-        logDebug("Sistem: API Speech berhenti.");
+        logDebug("🛑 Sistem: API Speech berhenti (Timeout).");
         if (isListening) {
-            logDebug("Sistem: Mencoba restart otomatis...");
-            // Delay 300ms sangat penting agar browser tidak crash/hang
             setTimeout(() => {
                 try {
                     recognition.start();
+                    logDebug("🔄 Sistem: Auto-restart...");
                 } catch (e) {
-                    logDebug("Sistem: Gagal restart, mencoba lagi...");
-                    // Jika gagal, coba restart ulang sekali lagi setelah 1 detik
-                    setTimeout(() => recognition.start(), 1000);
+                    logDebug("❌ Sistem: Gagal restart.");
                 }
             }, 300);
         }
@@ -217,18 +338,18 @@
             const data = await response.json();
             return data.responseData.translatedText;
         } catch (error) {
-            logDebug("Sistem: Gagal terjemahan.");
+            logDebug("❌ Gagal menghubungi API Terjemahan.");
             return "[Gagal menerjemahkan]";
         }
     }
 
     function toggleMic() {
         if (isListening) {
-            isListening = false; // Set dulu agar onend tidak auto-restart
+            isListening = false;
             recognition.stop();
             btnMic.classList.remove('btn-active');
             statusEl.innerText = "Mikrofon mati";
-            logDebug("Sistem: Mikrofon dimatikan manual.");
+            logDebug("🔕 Mikrofon dimatikan manual.");
         } else {
             isListening = true;
             recognition.lang = langSource.value;
@@ -236,9 +357,9 @@
                 recognition.start();
                 btnMic.classList.add('btn-active');
                 statusEl.innerText = "Mendengarkan...";
-                logDebug("Sistem: Mikrofon dinyalakan...");
+                logDebug("🎤 Mikrofon dinyalakan...");
             } catch(e) {
-                logDebug("Sistem: Gagal start manual. Coba klik lagi.");
+                logDebug("❌ Gagal start API Speech.");
                 isListening = false;
             }
         }
@@ -246,9 +367,16 @@
 
     function endCall() {
         if(isListening) toggleMic(); 
+        // Matikan echo juga jika masih nyala
+        if(echoToggle.checked) {
+            echoToggle.checked = false;
+            echoToggle.dispatchEvent(new Event('change'));
+        }
+        window.speechSynthesis.cancel();
         statusEl.innerText = "Panggilan berakhir";
         originalTextEl.innerText = "...";
         translatedTextEl.innerText = "Subtitle akan muncul di sini";
+        logDebug("📞 Panggilan diakhiri.");
     }
 </script>
 
