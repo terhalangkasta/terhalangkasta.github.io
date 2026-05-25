@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp Call + Live Translate (Debug Mode)</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #075e54;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .call-container {
+            background: linear-gradient(145deg, #128C7E, #075e54);
+            width: 350px;
+            height: 650px; /* Sedikit ditinggikan untuk panel debug */
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .profile-header { margin-top: 40px; text-align: center; }
+        .avatar {
+            width: 80px; height: 80px;
+            background-color: #dcf8c6; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 30px; color: #075e54; margin: 0 auto 15px;
+        }
+        .username { font-size: 24px; font-weight: bold; }
+        .call-status { font-size: 14px; color: #dcf8c6; margin-top: 5px; height: 20px; }
+        
+        /* Panel Debug untuk melihat error sistem */
+        .debug-panel {
+            margin-top: 15px;
+            width: 85%;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 10px;
+            color: #ffcdd2;
+            max-height: 40px;
+            overflow-y: auto;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .subtitle-box {
+            position: absolute;
+            bottom: 140px;
+            width: 90%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 10px;
+            min-height: 80px;
+            backdrop-filter: blur(5px);
+            box-sizing: border-box;
+        }
+        .original-text { font-size: 12px; color: #aaa; margin-bottom: 5px; font-style: italic; word-wrap: break-word; }
+        .translated-text { font-size: 16px; color: white; font-weight: 500; word-wrap: break-word; }
+        
+        .controls { position: absolute; bottom: 40px; display: flex; gap: 20px; }
+        .btn {
+            width: 60px; height: 60px; border-radius: 50%; border: none;
+            font-size: 24px; cursor: pointer; display: flex;
+            justify-content: center; align-items: center; transition: transform 0.2s;
+        }
+        .btn:hover { transform: scale(1.1); }
+        .btn-mic { background-color: #dcf8c6; color: #075e54; }
+        .btn-call { background-color: #f44336; color: white; }
+        .btn-active { background-color: #4caf50; color: white; animation: pulse 1.5s infinite; }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(76, 175, 80, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
+        }
+        .lang-selector { margin-top: 15px; display: flex; gap: 10px; align-items: center; font-size: 12px; }
+        select { padding: 5px; border-radius: 5px; border: none; background: #dcf8c6; color: #075e54; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="call-container">
+    <div class="profile-header">
+        <div class="avatar">🧑</div>
+        <div class="username">Budi (ID)</div>
+        <div class="call-status" id="status">Siap menelepon...</div>
+    </div>
+
+    <!-- Panel debug untuk melihat log sistem -->
+    <div class="debug-panel" id="debugLog">Menunggu aksi...</div>
+
+    <div class="lang-selector">
+        Bahasa Saya: 
+        <select id="langSource">
+            <option value="id-ID">Indonesia</option>
+            <option value="en-US">English</option>
+        </select>
+        <span>➡️</span>
+        <select id="langTarget">
+            <option value="en">English</option>
+            <option value="id">Indonesia</option>
+        </select>
+    </div>
+
+    <div class="subtitle-box">
+        <div class="original-text" id="originalText">...</div>
+        <div class="translated-text" id="translatedText">Subtitle akan muncul di sini</div>
+    </div>
+
+    <div class="controls">
+        <button class="btn btn-mic" id="btnMic" onclick="toggleMic()">🎤</button>
+        <button class="btn btn-call" onclick="endCall()">📞</button>
+    </div>
+</div>
+
+<script>
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const debugEl = document.getElementById('debugLog');
+    
+    if (!SpeechRecognition) {
+        alert("Browser Anda tidak mendukung Web Speech API. Gunakan Google Chrome.");
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.continuous = true; 
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 1; // Hanya ambil 1 hasil terbaik
+
+    let isListening = false;
+
+    const statusEl = document.getElementById('status');
+    const originalTextEl = document.getElementById('originalText');
+    const translatedTextEl = document.getElementById('translatedText');
+    const btnMic = document.getElementById('btnMic');
+    const langSource = document.getElementById('langSource');
+    const langTarget = document.getElementById('langTarget');
+
+    // Fungsi untuk mencatat log di layar
+    function logDebug(msg) {
+        console.log(msg);
+        debugEl.innerText = msg;
+    }
+
+    recognition.onstart = () => {
+        logDebug("Sistem: API Speech dimulai.");
+    };
+
+    recognition.onresult = async (event) => {
+        let interimTranscript = '';
+        let finalTranscript = '';
+
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+            const transcript = event.results[i][0].transcript;
+            if (event.results[i].isFinal) {
+                finalTranscript += transcript;
+                logDebug("Sistem: Kata final ditangkap.");
+            } else {
+                interimTranscript += transcript;
+                logDebug("Sistem: Mendeteksi suara...");
+            }
+        }
+
+        if (interimTranscript) originalTextEl.innerText = interimTranscript;
+        if (finalTranscript) originalTextEl.innerText = finalTranscript;
+
+        if (finalTranscript) {
+            statusEl.innerText = "Menerjemahkan...";
+            const translated = await translateText(finalTranscript);
+            translatedTextEl.innerText = translated;
+            statusEl.innerText = "Mendengarkan...";
+        }
+    };
+
+    recognition.onerror = (event) => {
+        logDebug("Sistem Error: " + event.error);
+        if (event.error === 'not-allowed') {
+            statusEl.innerText = "Mikrofon diblokir!";
+        }
+    };
+
+    // PATCH: Beri jeda (delay) saat restart agar tidak hanging
+    recognition.onend = () => {
+        logDebug("Sistem: API Speech berhenti.");
+        if (isListening) {
+            logDebug("Sistem: Mencoba restart otomatis...");
+            // Delay 300ms sangat penting agar browser tidak crash/hang
+            setTimeout(() => {
+                try {
+                    recognition.start();
+                } catch (e) {
+                    logDebug("Sistem: Gagal restart, mencoba lagi...");
+                    // Jika gagal, coba restart ulang sekali lagi setelah 1 detik
+                    setTimeout(() => recognition.start(), 1000);
+                }
+            }, 300);
+        }
+    };
+
+    async function translateText(text) {
+        const sourceLangCode = langSource.value.split('-')[0]; 
+        const targetLangCode = langTarget.value; 
+        
+        if(sourceLangCode === targetLangCode) return text;
+
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(text)}&langpair=${sourceLangCode}|${targetLangCode}`;
+        
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            return data.responseData.translatedText;
+        } catch (error) {
+            logDebug("Sistem: Gagal terjemahan.");
+            return "[Gagal menerjemahkan]";
+        }
+    }
+
+    function toggleMic() {
+        if (isListening) {
+            isListening = false; // Set dulu agar onend tidak auto-restart
+            recognition.stop();
+            btnMic.classList.remove('btn-active');
+            statusEl.innerText = "Mikrofon mati";
+            logDebug("Sistem: Mikrofon dimatikan manual.");
+        } else {
+            isListening = true;
+            recognition.lang = langSource.value;
+            try {
+                recognition.start();
+                btnMic.classList.add('btn-active');
+                statusEl.innerText = "Mendengarkan...";
+                logDebug("Sistem: Mikrofon dinyalakan...");
+            } catch(e) {
+                logDebug("Sistem: Gagal start manual. Coba klik lagi.");
+                isListening = false;
+            }
+        }
+    }
+
+    function endCall() {
+        if(isListening) toggleMic(); 
+        statusEl.innerText = "Panggilan berakhir";
+        originalTextEl.innerText = "...";
+        translatedTextEl.innerText = "Subtitle akan muncul di sini";
+    }
+</script>
+
+</body>
+</html>
